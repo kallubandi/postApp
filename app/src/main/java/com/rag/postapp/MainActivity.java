@@ -208,10 +208,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case IMAGE_PICKER_SELECT:
                 if (resultCode == Activity.RESULT_OK && data != null) {
 
-                    Uri selectedImageUri = data.getData();
                     // MEDIA GALLERY
-                    String selectedImagePath = getRealPathFromURI(selectedImageUri);
-                    photoPaths.add(selectedImagePath);
+                    String realPath = ImagePath.getPath(this, data.getData());
+
+                    photoPaths.add(realPath);
                     Picture s;
                     ArrayList<Picture> spacecrafts = new ArrayList<>();
 
