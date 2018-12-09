@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_address"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fafafa"
+    android:visibility="visible">
+
+    <ImageView
+        android:id="@+id/iv_def"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_loc" />
+
+
+    <TextView
+        android:id="@+id/address_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:layout_toEndOf="@+id/iv_def"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/full_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/address_title"
+        android:layout_alignStart="@+id/address_title"
+        android:focusable="false"
+        android:lineSpacingExtra="4dp"
+        android:textColor="#93999e"
+        android:textSize="15sp" />
+
+</RelativeLayout>

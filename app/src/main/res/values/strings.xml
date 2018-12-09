@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PostApp</string>
+    <string name="rationale_photo_picker">We require this permission to select photo from gallery and camera.</string>
+</resources>

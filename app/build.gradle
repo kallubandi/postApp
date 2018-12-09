@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+    defaultConfig {
+        applicationId "com.rag.postapp"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'com.android.support:support-v13:27.1.1'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:16.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
+    implementation 'com.google.android.gms:play-services-base:16.0.1'
+    implementation('com.squareup.picasso:picasso:2.5.2') {
+        transitive = true
+        exclude group: 'com.android.support'
+
+    }
+    implementation('com.droidninja:filepicker:2.2.0') {
+        transitive = true
+        exclude group: 'com.android.support', module:'design'
+
+    }
+    implementation("com.github.xinyuez:easypermissions:2.0.1") {
+        transitive = true
+        exclude group: 'com.android.support', module:'design'
+
+    }
+
+}

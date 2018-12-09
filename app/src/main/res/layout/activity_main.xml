@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.rag.postapp.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/toolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="start"
+                android:letterSpacing="-0.03"
+                android:text="New Post"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif"
+                android:gravity="end"
+                android:letterSpacing="-0.03"
+                android:lineSpacingExtra="8sp"
+                android:text="Post"
+                android:textColor="#bcbbc1"
+                android:textSize="16sp"
+                android:textStyle="normal" />
+
+
+        </RelativeLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="45"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Post Title" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostTitle"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            app:counterEnabled="true"
+            app:counterMaxLength="400"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Describe your Post" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostCat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostDesc"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Post Categories" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostDesc"
+            android:layout_alignEnd="@+id/tiPostCat"
+            android:layout_alignBottom="@+id/tiPostCat"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/activity_margin_16dp"
+            android:src="@drawable/ic_categories" />
+
+        <ImageView
+            android:id="@+id/ivCat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/tiPostCat"
+            android:layout_alignTop="@+id/tiPostCat"
+            android:layout_alignEnd="@+id/tiPostCat"
+            android:layout_alignBottom="@+id/tiPostCat" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostBudget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostCat"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:minWidth="150dp"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPostBudget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Budget"
+                android:inputType="number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivBudget"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/tiPostBudget"
+            android:layout_alignTop="@+id/tiPostBudget"
+            android:layout_alignEnd="@+id/tiPostBudget"
+            android:layout_alignBottom="@+id/tiPostBudget" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostINR"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostCat"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:layout_toEndOf="@+id/tiPostBudget"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:hint="             INR" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostCat"
+            android:layout_alignStart="@+id/tiPostINR"
+            android:layout_alignBottom="@+id/tiPostINR"
+            android:layout_marginStart="@dimen/activity_margin_16dp"
+            android:layout_marginTop="@dimen/activity_margin_16dp"
+            android:src="@drawable/ic_flag" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostCat"
+            android:layout_alignBottom="@+id/tiPostINR"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="@dimen/activity_margin_16dp"
+            android:layout_toEndOf="@+id/ivFlag"
+            android:src="@drawable/ic_down" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostBudget"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:minWidth="150dp"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Rate" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostpayMet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostBudget"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:layout_toEndOf="@+id/tiPostRate"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Payment Method" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostRate"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Post Location" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostRate"
+            android:layout_alignEnd="@+id/tiPostLocation"
+            android:layout_alignBottom="@+id/tiPostLocation"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/activity_margin_16dp"
+            android:src="@drawable/ic_loc" />
+
+        <ImageView
+            android:id="@+id/ivLoc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/tiPostLocation"
+            android:layout_alignTop="@+id/tiPostLocation"
+            android:layout_alignEnd="@+id/tiPostLocation"
+            android:layout_alignBottom="@+id/tiPostLocation" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiStartDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostLocation"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:minWidth="150dp"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Start Date" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/ivStart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/tiStartDate"
+            android:layout_alignTop="@+id/tiStartDate"
+            android:layout_alignEnd="@+id/tiStartDate"
+            android:layout_alignBottom="@+id/tiStartDate" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiPostTerm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiPostLocation"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:layout_toEndOf="@+id/tiPostRate"
+            app:hintTextAppearance="@style/HintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Job Term" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_post_attach_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tiStartDate"
+            android:layout_margin="@dimen/activity_margin_16dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.01"
+            android:textColor="#de828282"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            tools:text="Post Attachments" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_post_attach_header"
+            android:background="#efeff4"
+            android:minHeight="100dp">
+
+            <ImageView
+                android:id="@+id/iv_add"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="@dimen/activity_margin_16dp"
+                android:src="@drawable/ic_add" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_images"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_marginStart="@dimen/activity_margin_10dp"
+                android:layout_toEndOf="@+id/iv_add" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</ScrollView>
