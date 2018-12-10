@@ -240,33 +240,32 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public void createAlertDialogWithRadioButtonGroup(CharSequence[] values, String title) {
 
 
+        final CharSequence[] items = values;
+
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-
         builder.setTitle(title);
-
-        builder.setSingleChoiceItems(values, -1, new DialogInterface.OnClickListener() {
-
+        builder.setIcon(R.drawable.ic_launcher_foreground);
+        builder.setSingleChoiceItems(items, -1, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int item) {
+                Toast.makeText(getApplicationContext(), items[item], Toast.LENGTH_SHORT).show();
 
-                switch (item) {
-                    case 0:
-                        editTextBudget.setText("First Item");
-                        Toast.makeText(MainActivity.this, "First Item Clicked", Toast.LENGTH_LONG).show();
-                        break;
-                    case 1:
-                        editTextBudget.setText("Second Item");
-                        Toast.makeText(MainActivity.this, "Second Item Clicked", Toast.LENGTH_LONG).show();
-                        break;
-                    case 2:
-                        editTextBudget.setText("Third Item");
-                        Toast.makeText(MainActivity.this, "Third Item Clicked", Toast.LENGTH_LONG).show();
-                        break;
-                }
-                alertDialog.dismiss();
             }
         });
-        alertDialog = builder.create();
-        alertDialog.show();
+
+        builder.setPositiveButton("Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(MainActivity.this, "Success", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        builder.setNegativeButton("No",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(MainActivity.this, "Fail", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
 
     }
 
